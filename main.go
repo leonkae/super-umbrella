@@ -68,7 +68,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error rendering template", http.StatusInternalServerError)
 	}
 }
-
+// fetch db
 func fetchTodos(w http.ResponseWriter, r *http.Request) {
 	rows, err := db.Query("SELECT id, title, completed, created_at FROM todos")
 	if err != nil {
